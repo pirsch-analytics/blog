@@ -1,0 +1,22 @@
+baseURL = "https://pirsch.io/blog"
+languageCode = "en"
+title = "Pirsch Blog"
+theme = "scaff"
+
+[params]
+    title = "Pirsch Blog"
+    copyright = "© 2021 Emvi Software GmbH"
+    url = "https://emvi.com"
+    pirsch = "t43a8dlLRxMbs4pGz4NX4s3o8XrNDFVG"
+
+[outputFormats.SearchIndex]
+    baseName = "search"
+    mediaType = "application/json"
+
+[outputs]
+    home = ["HTML", "RSS", "SearchIndex"]
+
+[markup]
+    [markup.highlight]
+        linenos = true
+        noClasses = false

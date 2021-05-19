@@ -1,7 +1,3 @@
 # Pirsch Blog
 
-Our Blog for Pirsch. See https://blog.pirsch.io/.
-
-## License
-
-MIT
+The Pirsch blog. See https://pirsch.io/blog.

@@ -1,7 +1,25 @@
-baseURL = "https://pirsch.io/blog"
+baseURL = "https://pirsch.io/"
 languageCode = "en"
 title = "Pirsch Blog"
 theme = "scaff"
+
+[menu]
+    [[menu.footer]]
+        name = "GitHub"
+        url = "https://github.com/pirsch-analytics"
+        weight = 1
+    [[menu.footer]]
+        name = "Terms"
+        url = "https://pirsch.io/terms"
+        weight = 2
+    [[menu.footer]]
+        name = "Privacy"
+        url = "https://pirsch.io/privacy"
+        weight = 3
+    [[menu.footer]]
+        name = "Legal"
+        url = "https://pirsch.io/legal"
+        weight = 4
 
 [params]
     title = "Pirsch Blog"

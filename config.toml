@@ -5,6 +5,14 @@ theme = "scaffold"
 paginate = 10
 
 [menu]
+    [[menu.main]]
+        name = "Log in"
+        url = "https://pirsch.io/login"
+        weight = 1
+    [[menu.main]]
+        name = "Get Started"
+        url = "https://pirsch.io/signup"
+        weight = 2
     [[menu.footer]]
         name = "GitHub"
         url = "https://github.com/pirsch-analytics"

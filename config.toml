@@ -1,4 +1,4 @@
-baseURL = "https://pirsch.io/"
+baseURL = "https://pirsch.io/blog"
 languageCode = "en"
 title = "Pirsch Blog"
 theme = "scaffhold"

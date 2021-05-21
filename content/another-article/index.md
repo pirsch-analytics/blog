@@ -1,6 +1,6 @@
 ---
-title: "Test"
-date: 2021-05-19
+title: "Another Test"
+date: 2021-05-21
 summary: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
 image: "/test/images/test.jpg"
 author: Marvin Blum

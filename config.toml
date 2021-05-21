@@ -1,7 +1,7 @@
 baseURL = "https://pirsch.io/"
 languageCode = "en"
 title = "Pirsch Blog"
-theme = "scaff"
+theme = "scaffhold"
 
 [menu]
     [[menu.footer]]

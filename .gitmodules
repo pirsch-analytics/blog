@@ -1,0 +1,3 @@
+[submodule "themes/scaffold"]
+	path = themes/scaffold
+	url = https://github.com/pirsch-analytics/scaffold.git

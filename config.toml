@@ -47,3 +47,6 @@ paginate = 10
     [markup.highlight]
         linenos = true
         noClasses = false
+
+[taxonomies]
+	author = "authors"

@@ -34,6 +34,10 @@ paginate = 10
     title = "Pirsch Blog"
     copyright = "© 2021 Emvi Software GmbH"
     url = "https://emvi.com"
+    titleColor = "#ffffff"
+    themeColor = "#000000"
+    twitter = "@PirschAnalytics"
+    twitterCard = "product"
     pirsch = "t43a8dlLRxMbs4pGz4NX4s3o8XrNDFVG"
 
 [outputFormats.SearchIndex]

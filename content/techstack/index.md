@@ -7,7 +7,7 @@ authors: ["Marvin Blum"]
 draft: false
 ---
 
-*This article is intended for readers with a technical background. Basic knowledge of IT and server administration (Linux) is required.*
+*This article is intended for readers with a technical background. Basic knowledge of IT and server administration (Linux) is recommended.*
 
 > TL;DR
 >
@@ -96,11 +96,23 @@ Last but not least, all HashiStack tools have beatiful web UIs, making it really
 > Domains=~consul
 > ```
 >
-> We also had to add these two iptable rules.
+> We also had to add these two iptable rules...
 >
 > ```
 > iptables -t nat -A OUTPUT -d localhost -p udp -m udp --dport 53 -j REDIRECT --to-ports 8600
 > iptables -t nat -A OUTPUT -d localhost -p tcp -m tcp --dport 53 -j REDIRECT --to-ports 8600
+> ```
+>
+> ... and add this to the annonymous policy for the Consul token:
+>
+> ```
+> service_prefix "" {
+>   policy = "read"
+> }
+>
+> node_prefix "" {
+>   policy = "read"
+> }
 > ```
 
 ### Databases

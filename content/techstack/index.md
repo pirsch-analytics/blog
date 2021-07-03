@@ -1,6 +1,6 @@
 ---
 title: "How We Build and Operate Pirsch"
-date: 2021-06-30
+date: 2021-07-03
 summary: "Learn how we operate Pirsch on Hetzner cloud using HashiCorp Nomad, Traefik, Letsencrypt and more."
 image: "techstack/images/pcb.jpg"
 authors: ["Marvin Blum"]
@@ -11,8 +11,9 @@ draft: false
 >
 > This is our tech-stack:
 > * hosting: Hetzner Cloud
-> * cloud services: AWS S3 and SES, Hetzner VPN, load balancing, block storage, and managed SSL certificates
+> * services: AWS S3 and SES, Hetzner VPN, load balancing, block storage, and managed SSL certificates, Stripe for payments
 > * programming languages: Go (golang), TypeScript
+> * software: Docker, HashiStack (Consul + Nomad + Vault) for container orchestration, GoLand and Visual Studio Code for development
 
 When it comes to building and hosting a SaaS, you will basically read about two approaches. The first one is to use the services of some (large) cloud provider, like AWS, Azure, or Google Cloud. This approach is usually taken by startups with funding, or prior experience using the services. The second one is to host it yourself, usually on dedicated servers or virtual machines. This lean approach is good if you want to keep it simple and get started quickly at low cost.
 
@@ -24,9 +25,9 @@ Starting with hosting, we use virtual machines on Hetzner Cloud based in Falkens
 
 Why not use dedicated servers you might ask. While it does make sense from a performance to cost perspective, dedicated servers are less flexible. Renting a dedicated server is more of a commitment then spinning up a VM you can stop or rescale at any time. Should the need arise, we can scale the VMs vertically or add dedicated servers later on. Flexibility is one of the main reasons why cloud services became so popular, but it comes at a cost. Hetzner strikes a good balance between flexibility and costs.
 
-## Cloud Services
+## Services
 
-We use a bunch of cloud services. Mostly because they are cheap or we didn't want to host them ourselves.
+We use a bunch of (cloud) services.
 
 ### Storage
 
@@ -44,6 +45,10 @@ SSL is something I struggled a lot with. While Letsencrypt is an amazing service
 
 Appart from the load balancer, we also use a firewall, only allowing ports that must be open, and a private network for the cluster and database servers. Everything build right into the Hetzner cloud.
 
+### Subscriptions and Payments
+
+Subscriptions and payments are managed and processed by [Stripe](https://stripe.com/). We have used Stripe before and kept using it for Pirsch. The API and dashboard are fantastic and they have a great [Go SDK](https://github.com/stripe/stripe-go).
+
 ## Programming Languages
 
 If you follow our development on [GitHub](https://github.com/pirsch-analytics) or [Twitter](https://twitter.com/PirschAnalytics), you probably know already that we're using Go (golang) for backend and TypeScript for frontend development. I don't want to go into to much detail here, as there are other articles explaining the advantages and disadvantages of these languages better.
@@ -56,7 +61,17 @@ TypeScript is something we just recently switched to, coming from vanilla JavaSc
 
 ## Development
 
-## The HashiStack and Deployment
+Something we highly value is that we can build, test, and run Pirsch locally. For this reason, all parts of the application (backend, website, dashboard, batches, and databases) can be started without having to build the Docker images first or changing the YAML configuration. Only the databases (Postgres and ClickHouse) are run through Docker on our machines. This allows us to quickly iterate, test new features, and experiment. Additionally, we generate a test data set on startup, so that we have something to look at when we open the dashboard.
+
+All parts of the application can be started with a simple `go run main.go` or `npm run watch` (for the dashboard) command inside their respective directory. This is what the project directory structure looks like.
+
+![Project structure](posts/techstack/structure.png)
+
+If you look carefully, you'll notice that we have a `run_tests.sh` script. This is used to locally run all Go and TypeScript tests. As we are a two-person company, we didn't bother setting up CI (yet). Before each commit or release we run the script to ensure that are tests are passing. This is probably not how you should do it (you might forget to run it) and clearly a lazy solution, but the tests only take a couple of minutes to complete and are usually cached, so only a few seconds in reality.
+
+Before doing a release, we build the Docker images locally and push them to the GitHub container registry (all code is managed on GitHub).
+
+## The HashiStack, Databases, and Deployment
 
 ## Conclusion
 

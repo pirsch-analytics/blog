@@ -7,6 +7,8 @@ authors: ["Marvin Blum"]
 draft: false
 ---
 
+*This article is intended for readers with a technical background. Basic knowledge of IT and server administration (Linux) is required.*
+
 > TL;DR
 >
 > This is our tech-stack:
@@ -21,7 +23,7 @@ I think we fall in between these two approaches, neither spending too much on cl
 
 ## Hosting
 
-Starting with hosting, we use virtual machines on Hetzner Cloud based in Falkenstein, Germany. The main reason we chose Hetzner is cost. A single core VM on Google Cloud for example starts at about $15/month, while a single core Hetzner VM costs about 2,50€/month. Pirsch runs on a three node cluster, plus an additional VM for the database, all of them configured with two cores and 4 GB of RAM (more on that later). We had a similar setup for Emvi on Google Cloud before, which cost about 250€/month, while we are now paying about 45€/month for everything, including cloud services.
+Starting with hosting, we use virtual machines on Hetzner Cloud based in Falkenstein, Germany running Ubuntu Linux. The main reason we chose Hetzner is cost. A single core VM on Google Cloud for example starts at about $15/month, while a single core Hetzner VM costs about 2,50€/month. Pirsch runs on a three node cluster, plus an additional VM for the database, all of them configured with two cores and 4 GB of RAM (more on that later). We had a similar setup for Emvi on Google Cloud before, which cost about 250€/month, while we are now paying about 45€/month for everything, including cloud services.
 
 Why not use dedicated servers you might ask. While it does make sense from a performance to cost perspective, dedicated servers are less flexible. Renting a dedicated server is more of a commitment then spinning up a VM you can stop or rescale at any time. Should the need arise, we can scale the VMs vertically or add dedicated servers later on. Flexibility is one of the main reasons why cloud services became so popular, but it comes at a cost. Hetzner strikes a good balance between flexibility and costs.
 
@@ -73,6 +75,46 @@ Before doing a release, we build the Docker images locally and push them to the 
 
 ## The HashiStack, Databases, and Deployment
 
+This section is the most requested by our users and followers. I won't explain every detail of our setup, but I do want to highlight why you should consider it in favor of other container orchestrators like Kubernetes.
+
+### Consul, Vault, and Nomad
+
+When people talk about the HashiStack, they mean the combination of [Consul](https://www.consul.io/docs/intro), [Vault](https://www.hashicorp.com/products/vault), and [Nomad](https://www.nomadproject.io/) developed by HashiCorp. These three pieces of software combined make up the server cluster for Pirsch. There is a free open-source version for each of them and an enterprise tier for larger organizations and multi-cloud clusters. HashiCorp also offers managed solutions, in case you don't want to maintain it yourself.
+
+Consul is used for server meshing and service discovery. It provides a DNS service to resolve hostnames (like my.service.consul) to IP addresses. Vault stores secrets securely and provides access to them from Nomad. It's a very powerful tool that offers a lot more than that, but we only use to manage secrets and passwords right now. Nomad is a container orchestrator. We use it to schedule our containers and batch workloads (more on that below the deployment section).
+
+Combined, Consul, Vault, and Nomad can be considered a lightweight alternative to Kubernetes. Lightweight because they are easy to set up and maintain, making them a good fit for small businesses that want to maintain their own cluster. The HashiCorp configuration language (HCL) is a great improvement over Kubernetes YAML files and there are far less concepts to learn. Each part of the stack has its own focus and can be installed independently from the other systems, but they integrate very well. Nomad for example will automatically discover other nodes using Consul when installed.
+
+Another reason to chose the HashiStack over its alternatives is documentation. HashiCorp's documentation pages are very well written, beautiful, and most importantly, complete. You can set up the stack following the instructions without missing anything important. Something I really dislike about documentation is when it skip steps because they are "too complicated" at that point. HashiCorp doesn't make these tradeoffs and explains everything required to set up a production ready cluster. You don't have to spent countless hours figuring out how to make it secure or fix something missing in the documentation.
+
+Last but not least, all HashiStack tools have beatiful web UIs, making it really easy to deploy your software, discover issues, view log files, and more.
+
+> The only thing that lead to some confusion while setting up the stack was that Consul's service discovery didn't work on our Ubuntu servers first. The issue was that the DNS service collided with systemd-resolved on port 53. The solution was to make systemd-resolved listen to the Consul DNS service. This can be configured by editing the `/etc/systemd/resolved.conf` and changing the following lines.
+>
+> ```
+> DNS=127.0.0.1
+> Domains=~consul
+> ```
+>
+> We also had to add these two iptable rules.
+>
+> ```
+> iptables -t nat -A OUTPUT -d localhost -p udp -m udp --dport 53 -j REDIRECT --to-ports 8600
+> iptables -t nat -A OUTPUT -d localhost -p tcp -m tcp --dport 53 -j REDIRECT --to-ports 8600
+> ```
+
+### Databases
+
+Pirsch makes use of two databases, Postgres and [ClickHouse](https://clickhouse.tech/). You probably have heared of Postgres before. We use it to store user account data and configuration. It's part of the server cluster as it isn't under heavy load and therefor doesn't require its own server.
+
+You might not have heared of ClickHouse though. It's an analytical OLAP database developed by Yandax. The main difference to generalized databases like Postgres is, that it stores the data in a time series on disk. This allows it to quickly search through and aggregate data based on time ranges. We chose it because it perfectly fits our requirements and is very well supported on GitHub. It's installed on its own server, as it can become very performance hungry and we want to keep response times low. Right now it only uses a small two core 4 GB RAM virtual machine, but we can upscale it at any time.
+
+### Deployment
+
+TODO
+
 ## Conclusion
+
+TODO
 
 *Image by [Adi Goldstein](https://unsplash.com/photos/EUsVwEOsblE)*

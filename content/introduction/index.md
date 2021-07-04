@@ -2,7 +2,7 @@
 title: "Introduction"
 date: 2021-06-04
 summary: "Lets talk about us, why we started Pirsch and its future."
-image: "welcome/images/introduction.png"
+image: "introduction/images/introduction.png"
 authors: ["Marvin Blum"]
 draft: false
 ---

@@ -99,8 +99,14 @@ Last but not least, all HashiStack tools have nice web UIs that make it really e
 > We also had to add these two iptable rules...
 >
 > ```
-> iptables -t nat -A OUTPUT -d localhost -p udp -m udp --dport 53 -j REDIRECT --to-ports 8600
-> iptables -t nat -A OUTPUT -d localhost -p tcp -m tcp --dport 53 -j REDIRECT --to-ports 8600
+> iptables -t nat \
+>   -A OUTPUT -d localhost \
+>   -p udp -m udp --dport 53 \
+>   -j REDIRECT --to-ports 8600
+> iptables -t nat \
+>   -A OUTPUT -d localhost \
+>   -p tcp -m tcp --dport 53 \
+>   -j REDIRECT --to-ports 8600
 > ```
 >
 > ... and add this to the anonymous policy for the Consul token:

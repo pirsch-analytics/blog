@@ -43,7 +43,7 @@ AWS SES (Simple Email Service) is our email service of choice. The main reason w
 
 SSL is something I have struggled with a lot. While Letsencrypt is a great service that I really appreciate, there are a million ways to issue and place certificates on your servers. I was never quite sure which one to use. We had our own [acme-dns](https://github.com/joohoi/acme-dns) server that seemed to work, but then clashed with a DNS service that was running on port 53. We used Traefik's built-in system to issue certificates, built our own service to update the load-balancer certificate on Hetzner, and so on. In the end, Hetzner released an update so that the load balancer can use a fully managed (wildcard) certificate. You just need to use Hetzner's DNS servers and it will be updated automatically.
 
-![Certificate](blog/posts/techstack/certificate.png)
+![Certificate](/blog/posts/techstack/certificate.png)
 
 In addition to the load balancer, we also use a firewall and a private network for the cluster and the database servers. All built directly into the Hetzner cloud. To route traffic to the desired service, we use [Traefik](https://traefik.io/). For example, if you visit pirsch.io, your request will be routed to the website service. Everything on *.pirsch.io is routed to the dashboard, and so on. You can see a sample configuration below the deployment section.
 
@@ -55,7 +55,7 @@ Subscriptions and payments are managed and processed by [Stripe](https://stripe.
 
 If you follow our development on [GitHub](https://github.com/pirsch-analytics) or [Twitter](https://twitter.com/PirschAnalytics), you probably already know that we use Go (golang) for backend and TypeScript for frontend development. I don't want to go into too much detail here, as there are other articles that better explain the pros and cons of these languages.
 
-![Programming Languages](blog/posts/techstack/programming-languages.png)
+![Programming Languages](/blog/posts/techstack/programming-languages.png)
 
 Go is a fantastic language with good performance characteristics because it is statically typed and compiled to machine code. The simplicity helps to keep Pirsch maintainable and extensible, and we like that it's made for the web. Our website for example is rendered using Go templates.
 
@@ -67,7 +67,7 @@ Something we really appreciate is that we can build, test and run Pirsch locally
 
 All parts of the application can be started with a simple `go run main.go` or `npm run watch` (for the dashboard) command in their respective directory. This is how the directory structure of the project looks like.
 
-![Project structure](blog/posts/techstack/structure.png)
+![Project structure](/blog/posts/techstack/structure.png)
 
 If you look closely, you will notice that we have a script `run_tests.sh`. This is used to run all Go and TypeScript tests locally. Since we are a two-person company, we haven't bothered to set up CI (yet). Before each commit or release, we run the script to make sure the tests are successful. This is probably not the way you should do it (you might forget to run it) and clearly a lazy solution, but the tests only take a few minutes and are usually cached, so usually only take a few seconds.
 
@@ -191,13 +191,13 @@ EOF
 
 Usually, we just update the version number or make some changes to the embedded YAML configuration to deploy a new version. It will then pull the Docker image from GitHub and spin up the service, gradually replacing the currently deployed version. Here is a screenshot of all the jobs we are currently running on Nomad.
 
-![Nomad Web UI](blog/posts/techstack/nomad.png)
+![Nomad Web UI](/blog/posts/techstack/nomad.png)
 
 Batches and the system services (Traefik, Hetzner CSI plugin, and Postgres) are deployed in a similar way.
 
 Here is a screenshot of the deployed backend job.
 
-![Nomad Job Web UI](blog/posts/techstack/nomad-job.png)
+![Nomad Job Web UI](/blog/posts/techstack/nomad-job.png)
 
 ## Conclusion
 

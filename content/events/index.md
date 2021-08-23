@@ -100,7 +100,7 @@ window.addEventListener("scroll", () => {
 And finally, check that the minimum required reading time is reached and sent the event.
 
 ```JavaScript
-const readSeconds = Math.floor((new Date().getTime()-start)/1000);
+let readSeconds = Math.floor((new Date().getTime()-start)/1000);
 
 if(readSeconds >= minReadingTimeSeconds) {
     done = true;
@@ -204,7 +204,7 @@ window.addEventListener("DOMContentLoaded", () => {
             
             window.addEventListener("scroll", () => {
                 if(!done && getScrollPercent() > 85) {
-                    const readSeconds = Math.floor((new Date().getTime()-start)/1000);
+                    let readSeconds = Math.floor((new Date().getTime()-start)/1000);
 
                     if(readSeconds >= minReadingTimeSeconds) {
                         done = true;

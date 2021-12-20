@@ -1,10 +1,14 @@
----
-title: "Introduction"
-date: 2021-06-04
-summary: "Lets talk about us, why we started Pirsch and its future."
-image: "introduction/images/introduction.png"
-authors: ["Marvin Blum"]
-draft: false
+slug = "introduction"
+title = "Introduction"
+date = 2021-06-04
+summary = "Lets talk about us, why we started Pirsch and its future."
+image = "introduction.png"
+
+[author]
+name = "Marvin Blum"
+image = "mb.png"
+github = "Kugelschieber"
+twitter = "m5blum"
 ---
 
 I think it's time to introduce ourselves and explain why we are building Pirsch. While we are always open if you talk to us directly, I feel like we are somewhat anonymous. Let's change that!

@@ -1,10 +1,14 @@
----
-title: "How We Develop and Operate Pirsch"
-date: 2021-07-04
-summary: "Learn how we operate Pirsch on Hetzner cloud using HashiCorp Nomad, Traefik, Letsencrypt and more."
-image: "techstack/images/pcb.jpg"
-authors: ["Marvin Blum"]
-draft: false
+slug = "techstack"
+title = "How We Develop and Operate Pirsch"
+date = 2021-07-04
+summary = "Learn how we operate Pirsch on Hetzner cloud using HashiCorp Nomad, Traefik, Letsencrypt and more."
+image = "pcb.jpg"
+
+[author]
+name = "Marvin Blum"
+image = "mb.png"
+github = "Kugelschieber"
+twitter = "m5blum"
 ---
 
 *This article is intended for readers with a technical background. Basic knowledge of IT and server administration (Linux) is recommended.*

@@ -1,10 +1,14 @@
----
-title: "How to Track the Reading Time of Blog Articles and Registrations"
-date: 2021-07-28
-summary: "Learn how we implemented reading time tracking for our blog and how we reliably track registrations from our backend."
-image: "events/images/alarmclock.jpg"
-authors: ["Marvin Blum"]
-draft: false
+slug = "events"
+title = "How to Track the Reading Time of Blog Articles and Registrations"
+date = 2021-07-28
+summary = "Learn how we implemented reading time tracking for our blog and how we reliably track registrations from our backend."
+image = "alarmclock.jpg"
+
+[author]
+name = "Marvin Blum"
+image = "mb.png"
+github = "Kugelschieber"
+twitter = "m5blum"
 ---
 
 With the recent addition of [custom event tracking](https://docs.pirsch.io/dashboard/events/), you can get really creative in what you can achieve with Pirsch. In this article, I would like to present two use-cases we have implemented. The first one uses our JavaScript snippet to track the reading time of blog articles, the second one reliably tracks registrations.

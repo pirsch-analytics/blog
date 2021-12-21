@@ -1,5 +1,5 @@
-slug = "recap-2021"
-title = "Recap of 2021"
+slug = "our-recap-2021"
+title = "Our Recap of 2021"
 date = 2021-12-21
 summary = "A recap of the past year, what we did, and what we have planned for 2022."
 image = "recap2021.png"
@@ -60,7 +60,7 @@ The monthly pricing for these plans will stay the same.
 
 ## Conclusion
 
-Thank you to everyone who supported us in the past year. You helped us to get Pirsch off the ground, by becoming a customer, sending us feedback and bug reports, and spreading the word.
+Thank you to everyone who supported us in the past year. You helped us to get Pirsch off the ground, by becoming a customer, sending us feedback and bug reports, and spreading the word. Also a special thank you to Dezeiraud, Rishi, Ferdinand, Gustavo, Nathan, Berry, William, and Zep for your helpful feedback and contributions (I hope I didn't miss someone).
 
 We hope that you will have a nice and calm end of the year and stay with us in the next one.
 

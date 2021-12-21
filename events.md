@@ -142,11 +142,11 @@ You can find the full source code at the bottom of this article.
 
 Once the first visitors have started reading articles, the event will automatically appear on the dashboard.
 
-![Events](/blog/posts/events/events.png)
+![Events](/blog/static/events/events.png)
 
 Open up the detailed view to see which articles were opened and how long it took visitors to read through them. The number of views and visitors will be identical, as we prevent the event from being sent twice.
 
-![Event Details](/blog/posts/events/event-details.png)
+![Event Details](/blog/static/events/event-details.png)
 
 ## Tracking Registrations Reliably
 

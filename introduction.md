@@ -21,7 +21,7 @@ Daniel has a background in product design and mechanical engineering and is resp
 
 I have a degree in computer science and have been programming since I was a child. I'm working on most of the technical parts, like the backend, server infrastructure, documentation, and so on. But it's hard to draw a clear line between the work we both do.
 
-![Team](/blog/posts/introduction/team.png)
+![Team](/blog/static/introduction/team.png)
 
 *Daniel on the left, Marvin on the right.*
 
@@ -39,7 +39,7 @@ I started implementing a [library](https://github.com/pirsch-analytics/pirsch) t
 
 After adding it to my website, I created a page with some charts showing how well my posts performed. Except for some bot traffic initially, I was quite pleased with the result. The page now redirects to Pirsch, but it looked like this:
 
-![marvinblum.de Dashboard](/blog/posts/introduction/charts.png)
+![marvinblum.de Dashboard](/blog/static/introduction/charts.png)
 
 There were more charts, like visitors by page and time of day.
 

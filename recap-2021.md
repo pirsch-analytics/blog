@@ -1,5 +1,5 @@
 slug = "recap-2021"
-title = "Recap 2021"
+title = "Recap of 2021"
 date = 2021-12-21
 summary = "A recap of the past year, what we did, and what we have planned for 2022."
 image = "recap2021.png"

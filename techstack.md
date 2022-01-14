@@ -13,9 +13,10 @@ twitter = "m5blum"
 
 *This article is intended for readers with a technical background. Basic knowledge of IT and server administration (Linux) is recommended.*
 
-TL;DR
+**TL;DR**
 
 This is our tech-stack:
+
 * hosting: Hetzner Cloud
 * services: AWS S3 and SES, Hetzner VPN, load balancing, block storage, and managed SSL certificates, Stripe for payments
 * programming languages: Go (golang), TypeScript

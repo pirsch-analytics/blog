@@ -27,8 +27,8 @@ noyb is an NGO from Austria fighting for privacy on the internet. Last year, the
 
 We recommend removing Google Analytics from any website you own. While it might take a while until other EU countries follow the Austrian decision, and it's unlikely that you will get sued in the next few weeks or months, it's best to be on the safe side. The court didn't decide on the penalty yet, but the GDPR foresees penalties of up to 20 million euros, or 4% of global turnover.
 
-A lot of businesses depend on Google Analytics to measure their marketing campaigns and basic website performance metrics. Most of the these key metrics can easily be measured with a GDPR compliant alternative, like [Pirsch](https://pirsch.io) or [other european-based web analytics solutions](https://european-alternatives.eu/category/web-analytics-services).
+A lot of businesses depend on Google Analytics to measure their marketing campaigns and website performance metrics. Most of the these key metrics can easily be measured with a GDPR compliant alternative, like [Pirsch](https://pirsch.io) or [other european-based web analytics solutions](https://european-alternatives.eu/category/web-analytics-services).
 
-In the long run, US companies will have to adapt or be replaced by GDPR compliant solutions.
+You can run one of the solutions alongside your GA setup if you like and compare the numbers. A nice benefit of GDPR compliant solutions is that you don't need consent, so you should see higher numbers than on GA and more accurate statistics. In the long run, US companies will have to adapt or be replaced by GDPR compliant solutions.
 
 > We will update this article when more information becomes available.

@@ -13,13 +13,13 @@ twitter = "m5blum"
 
 *This article is intended for readers with a technical background. Basic knowledge of IT and server administration (Linux) is recommended.*
 
-> TL;DR
->
-> This is our tech-stack:
-> * hosting: Hetzner Cloud
-> * services: AWS S3 and SES, Hetzner VPN, load balancing, block storage, and managed SSL certificates, Stripe for payments
-> * programming languages: Go (golang), TypeScript
-> * software: Docker, HashiStack (Consul + Nomad + Vault) for container orchestration, Traefik for routing, GoLand and Visual Studio Code for development
+TL;DR
+
+This is our tech-stack:
+* hosting: Hetzner Cloud
+* services: AWS S3 and SES, Hetzner VPN, load balancing, block storage, and managed SSL certificates, Stripe for payments
+* programming languages: Go (golang), TypeScript
+* software: Docker, HashiStack (Consul + Nomad + Vault) for container orchestration, Traefik for routing, GoLand and Visual Studio Code for development
 
 When it comes to building and hosting a SaaS, you will basically hear about two approaches. The first is to use the services of a (large) cloud provider, such as AWS, Azure or Google Cloud. This approach is usually chosen by startups that have funding or already have experience using these services. The second option is to host it yourself, usually on dedicated servers or virtual machines. This lean approach is good if you want to keep it simple and get started quickly and inexpensively.
 

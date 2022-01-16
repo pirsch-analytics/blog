@@ -11,6 +11,8 @@ github = "Kugelschieber"
 twitter = "m5blum"
 ---
 
+> We will keep updating this article. Updates can be found at the end.
+
 The Austrian Data Protection Authority (DSB) has declared that the data transfer from the EU to the US through Google Analytics is illegal. This is a groundbreaking decision, as millions of websites worldwide rely on Google Analytics and it is considered the industry standard.
 
 [noyb](https://noyb.eu/en/austrian-dsb-eu-us-data-transfers-google-analytics-illegal) initiated the decision by filing the [101 model complaints](https://noyb.eu/en/101-complaints-eu-us-transfers-filed) after the "Schrems II" decision, which rendered the EU-US data transfer agreement illegal in 2020. Back then, the European Court of Justice decided that US providers violated the GDPR as US authorities gained access to personal information of EU citizens.
@@ -31,4 +33,6 @@ A lot of businesses depend on Google Analytics to measure their marketing campai
 
 You can run one of the solutions alongside your GA setup if you like and compare the numbers. A nice benefit of GDPR compliant solutions is that you don't need consent, so you should see higher numbers than on GA and more accurate statistics. In the long run, US companies will have to adapt or be replaced by GDPR compliant solutions.
 
-> We will update this article when more information becomes available.
+## Update January, 16
+
+The Dutch privacy protection authority [warns that GA might become illegal](https://tweakers.net/nieuws/192020/autoriteit-persoonsgegevens-waarschuwt-voor-mogelijk-verbod-op-google-analytics.html), following the Austrian decision. As we have already assumed, it's likely that more European countries will follow.

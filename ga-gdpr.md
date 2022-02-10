@@ -36,3 +36,7 @@ You can run one of the solutions alongside your GA setup if you like and compare
 ## Update January, 16
 
 The Dutch privacy protection authority [warns that GA might become illegal](https://tweakers.net/nieuws/192020/autoriteit-persoonsgegevens-waarschuwt-voor-mogelijk-verbod-op-google-analytics.html), following the Austrian decision. As we have already assumed, it's likely that more European countries will follow.
+
+## Update Feburary, 10
+
+The French DPA [agrees with the Austrian Data Protection Authority](https://www.cnil.fr/fr/utilisation-de-google-analytics-et-transferts-de-donnees-vers-les-etats-unis-la-cnil-met-en-demeure) that the data transfer from Google Analytics into the US violates the GDPR.

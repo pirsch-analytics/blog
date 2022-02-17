@@ -32,6 +32,6 @@ The beta launch has about 75 upvotes, compared to the much better 329 upvotes fo
 
 Using this approach, we acquired our first few users and got some feedback. We also reached out to users that have registered before via email, on social media, and from our dashboard (through the news dialog) to upvote or leave a review. Our very first beta customer hunted our product on full launch, mobilizing even more users. Listening to feedback helped us to make design changes and improve the screenshots.
 
-Think of your post like it is your temporary landing page and apply the same principles. How can you stand out and in what way can arouse interest? Take a look at the questions you received on your first post and build the answers into your maker comment. This also helps to come up with answers to new questions possibly asked.
+Think of your post like it is your temporary landing page and apply the same principles. How can you stand out and in what way can you arouse interest? Take a look at the questions you received on your first post and build the answers into your maker comment. This also helps to come up with answers to new questions possibly asked.
 
 When making your first steps into the Indie Hacking world, you might think that PH is the key moment that will either define success or failure. While in reality, it’s just one of many marketing steps to take, and you should treat it like that. PH isn’t special in this regard.

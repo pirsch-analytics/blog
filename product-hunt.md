@@ -1,5 +1,5 @@
 slug = "launching-on-product-hunt"
-title = "Our Experience Launching on Product Hunt"
+title = "Our Experience Launching the Same Project on Product Hunt Twice"
 date = 2022-02-17
 summary = "I recently stumbled across a discussion on Indie Hackers about whether Product Hunt is a useful platform to launch your product on, and I thought I’d share some of our experiences."
 image = "producthunt.png"

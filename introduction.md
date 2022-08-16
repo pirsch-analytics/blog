@@ -21,9 +21,9 @@ Daniel has a background in product design and mechanical engineering and is resp
 
 I have a degree in computer science and have been programming since I was a child. I'm working on most of the technical parts, like the backend, server infrastructure, documentation, and so on. But it's hard to draw a clear line between the work we both do.
 
-![Team](/blog/static/introduction/team.png)
+![Team](/blog/static/introduction/team.jpg)
 
-*Daniel on the left, Marvin on the right.*
+*Marvin on the left, Daniel on the right.*
 
 ## How It Started
 

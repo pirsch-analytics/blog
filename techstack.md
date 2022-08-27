@@ -2,7 +2,7 @@ slug = "techstack"
 title = "How We Develop and Operate Pirsch"
 date = 2021-07-04
 summary = "Learn how we operate Pirsch on Hetzner cloud using HashiCorp Nomad, Traefik, Letsencrypt and more."
-image = "pcb.jpg"
+image = "development.png"
 
 [author]
 name = "Marvin Blum"

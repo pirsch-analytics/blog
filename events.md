@@ -2,7 +2,7 @@ slug = "events"
 title = "How to Track the Reading Time of Blog Articles and Registrations"
 date = 2021-07-28
 summary = "Learn how we implemented reading time tracking for our blog and how we reliably track registrations from our backend."
-image = "alarmclock.jpg"
+image = "timetracking.png"
 
 [author]
 name = "Marvin Blum"

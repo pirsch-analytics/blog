@@ -33,4 +33,6 @@ Our optional backend integration allows for accurate results while not slowing d
 
 With Version 1.16 we are introducing our Google Universal Analytics import. By connecting to your Google account through the settings page you can import and convert your website properties up to the point Pirsch collected your first page view. Afterward, you can delete your Google Analytics account as it is no longer needed. Imported data will show up in your dashboard seamlessly.
 
+## Conclusion
+
 Removing Google Analytics from your website speeds up your page load, doesn't penalize your SEO ranking and you can finally get rid of that cookie banner. There never was a better point in time to reevaluate your analytics solution.

@@ -25,7 +25,7 @@ In March 2022, Google announced Google Analytics 3 – also called Universal Ana
 
 In recent years, the market for analytics solutions has been expanded by many alternatives. We started Pirsch Analytics out of our own need and designed it with simplicity and user privacy in mind. We don't collect any personal data, don't store cookies and the core is [open-source on GitHub](https://github.com/pirsch-analytics/pirsch) for everyone to see and build upon.
 
-These days, we are collecting tens of millions of page views for our customers every month and are continuously improving and expanding our platform. All data is kept securely on our servers in Germany. Obviously, we never share anything third parties.
+These days, we are collecting tens of millions of page views for our customers every month and are continuously improving and expanding our platform. All data is kept securely on our servers in Germany. Obviously, we never share anything with third parties.
 
 Our optional [backend integration](https://docs.pirsch.io/get-started/backend-integration/) allows for accurate results while not slowing down your page with scripts, and the [powerful API and numerous SDKs](https://docs.pirsch.io/api-sdks/) let you automate any tasks and even integrate Pirsch into your software.
 

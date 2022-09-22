@@ -2,7 +2,7 @@ slug = "google-analytics-declared-illegal-by-austrian-dsb"
 title = "Google Analytics Declared Illegal In Europe"
 date = 2022-01-13
 summary = "The transfer of data from the EU to the US through Google Analytics was declared illegal by the Austrian DSB."
-image = "ga.png"
+image = "ga-gdpr.png"
 
 [author]
 name = "Marvin Blum"

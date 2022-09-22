@@ -1,5 +1,5 @@
 slug = "introduction"
-title = "Introduction"
+title = "Introduction to Pirsch Analytics"
 date = 2021-06-04
 summary = "Lets talk about us, why we started Pirsch and its future."
 image = "introduction.png"

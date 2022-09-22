@@ -40,3 +40,7 @@ The Dutch privacy protection authority [warns that GA might become illegal](http
 ## Update Feburary, 10
 
 The French DPA [agrees with the Austrian Data Protection Authority](https://www.cnil.fr/fr/utilisation-de-google-analytics-et-transferts-de-donnees-vers-les-etats-unis-la-cnil-met-en-demeure) that the data transfer from Google Analytics into the US violates the GDPR.
+
+## Update September, 22
+
+Yesterday [Denmark followed](https://www.datatilsynet.dk/english/google-analytics/use-of-google-analytics-for-web-analytics) the rulings of France, Austria, Italy, and the Netherlands and decided that using Google Analytics is incompatible with data protection regulations: *Our conclusion is that the tool cannot, without more, be used lawfully.*

@@ -80,7 +80,7 @@ For our first article, we talked to Berry about his Pirsch integration into [Mag
 
 ## Demo Video
 
-<video style="border-radius: 6px;max-width: 100%;" controls>
+<video controls>
     <source src="/blog/static/maglr/demo.mp4" type="video/mp4" />
 </video>
 

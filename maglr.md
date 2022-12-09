@@ -1,7 +1,7 @@
 slug = "maglr-pirsch-integration"
-title = "How Maglr Created a Custom Pirsch Integration"
+title = "Case Study: How Maglr.com Integrated Pirsch Analytics"
 date = 2022-12-09
-summary = "We interviewed Berry van Elk about his Pirsch integration into Maglr."
+summary = "We interviewed Berry van Elk about his Pirsch integration into Maglr as a replacement for Google Analytics."
 image = "maglr.png"
 
 [author]

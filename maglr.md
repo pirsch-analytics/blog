@@ -41,7 +41,7 @@ For our first article, we talked to Berry about his Pirsch integration into [Mag
 
 ![Filter on page level](/blog/static/maglr/stats-filter-on-page-level.jpg)
 
-**How did you learn about Pirsch, and what made you choose it?
+**How did you learn about Pirsch, and what made you choose it?**
 
 > We started looking for an alternative. We wanted to be able to create a dashboard ourselves and merge the measured data with our own. We wanted to be able to run trackers to measure the stats on our own domain. Not only is this important for ad blockers, but also for organizations that do not want third-party plugins in their publications.
 
@@ -80,9 +80,9 @@ For our first article, we talked to Berry about his Pirsch integration into [Mag
 
 ## Demo Video
 
-<video width="768" height="442" style="border-radius: 6px;">
-    <source src="/blog/static/maglr/demo.mp4" type="video/mp4">
-</video> 
+<video style="border-radius: 6px;max-width: 100%;" controls>
+    <source src="/blog/static/maglr/demo.mp4" type="video/mp4" />
+</video>
 
 ## More Screenshots
 

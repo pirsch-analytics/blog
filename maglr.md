@@ -15,7 +15,7 @@ twitter = "m5blum"
 
 For our first article, we talked to Berry about his Pirsch integration into [Maglr](https://www.maglr.com/en).
 
-> Hi, Berry! Could you please give us a brief introduction to yourself and Maglr?
+> Hi, Berry! Please introduce yourself and tell us about Maglr.
 
 My name is Berry van Elk, CEO of Maglr.com. We are a Dutch Saas platform that helps organizations worldwide share online stories with a better reading experience. Anyone without technical know-how is able to design and publish interactive stories via our design platform. Think of magazines, reports, presentations, infographics, or product brochures.
 

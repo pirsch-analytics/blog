@@ -1,5 +1,5 @@
 slug = "maglr-pirsch-integration"
-title = "Use Case: Integrating Pirsch Into Maglr"
+title = "How Maglr Created a Custom Pirsch Integration"
 date = 2022-12-09
 summary = "We interviewed Berry van Elk about his Pirsch integration into Maglr."
 image = "maglr.png"

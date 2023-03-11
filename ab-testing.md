@@ -41,6 +41,8 @@ We have four variations. The images on the home page can be swapped (A and B) an
 
 ![Variant C and D](/blog/static/abtesting/variant-cd.png)
 
+Now, of course, we want to know which variations work best.
+
 ## Analyzing the Results on the Dashboard
 
 *WIP*

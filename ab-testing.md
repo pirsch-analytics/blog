@@ -11,7 +11,7 @@ github = "Kugelschieber"
 twitter = "m5blum"
 ---
 
-Before we get started, I'd like to point out that we will most likely implement a more sophisticated A/B testing feature in the future. But you can do proper A/B testing today using events. In this demo, we're doing everything on the server-side, but you could also set it up in the browser using our JavaScript snippets.
+Before we get started, I'd like to point out that we will implement a more sophisticated A/B testing feature in the future. But you can do proper A/B testing today using events. In this demo, we're doing everything on the server-side, but you could also set it up in the browser using our JavaScript snippets.
 
 The source code for this demo is available on [GitHub](https://github.com/pirsch-analytics/demo/tree/master/deno).
 
@@ -362,4 +362,13 @@ export function OrderDino(props: OrderDinoProps) {
 
 ## Conclusion
 
-*WIP*
+In this article we covered:
+
+* How you can do A/B testing using custom events
+* Analyze the effectivness of variations on your dashboard
+* Set up tracking from your (Deno) backend
+* Create events from your backend to track conversions or whole sessions
+
+This demo is a bit more complicated than it usually needs to be, but I wanted to showcase a few ideas you might want to adapt for your own project, as there hasn't been a complete server-side demo for Pirsch. For example, you can do all of the things presented here just using our snippets in the browser. You don't really need the global A/B testing event, because tracking the variant driving a conversion is usually good enough.
+
+However, we'll keep improving Pirsch and implement a more sophisticated A/B tracking feature in the future. But for now, this is a simple and flexible method to do A/B testing.

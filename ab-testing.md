@@ -2,7 +2,7 @@ slug = "flexible-ab-testing-on-deno-using-the-fresh-framework-and-pirsch-analyti
 title = "Flexible A/B Testing on Deno Using the Fresh Framework and Pirsch Analytics"
 date = 2023-03-19
 summary = "Learn how you can implement A/B testing on Deno + Fresh using Pirsch."
-image = ""
+image = "abtesting.png"
 
 [author]
 name = "Marvin Blum"

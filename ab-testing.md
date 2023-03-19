@@ -1,6 +1,6 @@
 slug = "flexible-ab-testing-on-deno-using-the-fresh-framework-and-pirsch-analytics"
 title = "Flexible A/B Testing on Deno Using the Fresh Framework and Pirsch Analytics"
-date = 2023-03-12
+date = 2023-03-19
 summary = "Learn how you can implement A/B testing on Deno + Fresh using Pirsch."
 image = ""
 
@@ -33,7 +33,7 @@ Once you've chosen and ordered your dinosaur, you'll receive a confirmation.
 
 So what do we care about here? Where is the A/B testing?
 
-Well, because we do everything on the server, you can't really see it on the website. On the first visit, we define which variants the visitor will see and keep showing them in the same way. There are no in-between changes during a session.
+Well, because we do everything on the server, you can't really see it on the website. On the first visit, we define which variants the visitor will see and keep showing them in the same way. There are no in-between changes during a session to not cause confusion.
 
 We have four variations. The images on the home page can be swapped (A and B) and we have two titles for the order form (C and D).
 
@@ -49,40 +49,40 @@ Let's take a quick look at the dashboard.
 
 ![Dashboard Overview](/blog/static/abtesting/dashboard-overview.png)
 
-We had three visitors today. One of them placed an order and the other two just browsed the website. Each of them created a single *A/B-Testing* event. The order was also tracked as an event.
+We had three visitors today. One of them placed an order, and the other two just browsed the website. Each of them created a single *A/B-Testing* event. The order was also tracked as an event.
 
-Looking at the event metadata, we can see that we always displayed variant B for the dinosaur selection and variant C and D for the form headline.
+Looking at the event metadata, we can see that we always displayed variant B for the dinosaur selection and variants C and D for the form headline.
 
 ![Selection Metadata](/blog/static/abtesting/metadata-selection.png)
 
 ![Form Metadata](/blog/static/abtesting/metadata-form.png)
 
-Which variant is displayed is selected randomly. In this case comparing variant A and B (order of the detail page links) isn't really useful, so we'll see what we can do with the form headline (variant C and D). Of course, you need a bigger sample to make any decisions in the real world.
+The variant displayed is selected randomly. In this case, comparing variants A and B (order of detail page links) isn't particularly useful, so let's see what we can do with the form headline (variants C and D). Of course, you need a larger sample to make any decisions in the real world.
 
-As we set the *A/B-Testing* event only once on the first page view, we can now click the variant we would like to filter the sessions upon. It's important to note that we now only see results were the event with that particular metadata (!) was created during the session.
+As we set the *A/B-Testing* event only once on the first page view, we can now click the variant we would like to filter the sessions upon. It's important to note that we now only see results where the event with that particular metadata (!) was created during the session.
 
 ![Metadata Filter](/blog/static/abtesting/filter-variant-c.png)
 
-This returns all page views created during the session. In this case headline C didn't lead to an order. The visitors just browsed the details pages and left.
+This returns all page views generated during the session. In this case, headline C didn't lead to an order. The visitors just browsed the details pages and left.
 
-If we now add the *New Order* event to the filter (from the lense selection) and switch to variant D, we can see that we received an order.
+If we now add the *New Order* event to the filter (from the lens selection) and switch to variant D, we can see that we received an order.
 
 ![Order Filter](/blog/static/abtesting/filter-variant-d.png)
 
 Two key takeaways from this are:
 
-* Headline D (*Get your Dinosaur!*) is more effective at converting visitors to customers
-* The form works better on the details page (you can tell from the exit or event page panels)
+* Headline D (*Get your Dinosaur!*) is more effective at converting visitors to customers.
+* The form works better on the details page (you can tell from the exit or event page panels).
 
-There is more we could look into. For example where the visitor came from, which browser or device was used, ... but this should be enough to give you a rough idea of how you could use this.
+There is more we could look into. For example, where the visitor came from, which browser or device was used, and so on. But this should be enough to give you a rough idea of how you could use it.
 
-A simpler way to analyze the results is by viewing the metadata for the order event, as we only create that when an order is placed.
+An easier way to analyze the results is by viewing the metadata for the order event, as we only create that when an order is placed.
 
 ![Order Event](/blog/static/abtesting/order-event.png)
 
-This will immediatly tell you which headline was displayed when an order is placed. If we would have more data, we could compare them site by site. Imagine having 10,000 visitors a day and 3,000 of them placed an order when variant D was displayed, while only 500 placed an order with variant C.
+This will immediately tell you which headline was displayed when an order was placed. If we had more data, we could compare them side by side. Imagine having 10,000 visitors a day, and 3,000 of them placed an order when variant D was displayed, while only 500 placed an order with variant C.
 
-The *A/B-Testing* event is more useful if you would like to compare non-interactive elements on your page, like the order of the links, or a different theme color.
+The *A/B-Testing* event is more useful in cases where you would like to compare non-interactive elements on your page, like the order of the links or a different theme color.
 
 ## Implementation
 
@@ -92,7 +92,7 @@ I won't cover all the details, just the parts that are specific to this demo, bu
 
 ### Adding the Pirsch SDK
 
-After setting up Deno + Fresh, we first need to initialize the Pirsch SDK. It is placed inside its own module, so that we can export two global functions `pageView` and `event` to track statistics.
+After setting up Deno and Fresh, we first need to initialize the Pirsch SDK. It is contained within its own module, allowing us to export two global functions, 'pageView' and 'event,' to track statistics.
 
 ```ts
 // imports...
@@ -128,7 +128,7 @@ export function event(
 
 The SDK is configured from the `deno.json` and `.env` files.
 
-Something that doesn't work out of the box currently is the `hitFromRequest` method. It will take a Node HTTP request as an argument and returns all necessary data for the request to Pirsch. We need to map the Deno `Request` and `MiddlewareHandlerContext` to reconstruct the Node request object. I've added a simple mapping function for that.
+Something that doesn't work out of the box currently is the `hitFromRequest` method. It will take a Node HTTP request as an argument and return all necessary data for the request to Pirsch. We need to map the Deno `Request` and `MiddlewareHandlerContext` to reconstruct the Node request object. I've added a simple mapping function for that.
 
 ```ts
 function toPirschRequest(
@@ -150,11 +150,11 @@ function toPirschRequest(
 }
 ```
 
-Errors will be logged, and the SDK takes care of the request handling. We're using an *access key* in this case, so we don't need a client ID + secret. Access keys can be created by adding a client with the access key type on the integration settings page.
+Errors will be logged, and the SDK takes care of the request handling. We're using an *access key* in this case, so we don't need a client ID and secret. Access keys can be created by adding a client with the access key type on the integration settings page.
 
 ### Routing
 
-Next, we'll add three pages below the `routes` directory: the home page and two details pages. One for the Ankylosaurus and one for the Brachisaurus. They'll all be using the same middleware to track page views.
+Next, we'll add three pages below the `routes` directory: the home page and two detail pages. One for the Ankylosaurus and one for the Brachiosaurus. They'll all be using the same middleware to track page views.
 
 ```ts
 // imports...
@@ -176,7 +176,7 @@ export async function handler(
 }
 ```
 
-As you can see, we're using the context to determine if a page view should be tracked. This is necessary, as otherwise we would also track resources, like the favicon.ico requests for example.
+As you can see, we're using the context to determine if a page view should be tracked. This is necessary, as otherwise we would also track resources, like the favicon.ico requests, for example.
 
 The `track` variable will be set in the page handlers. Here is an example for the home page in `index.tsx`.
 
@@ -228,7 +228,7 @@ export async function sendOrder(req, ctx) {
 }
 ```
 
-Of course, a real world application would require a bit more logic. The event includes the variant and the dinosaur name, but not the name of the customer, for privacy reasons.
+Of course, a real-world application would require a bit more logic. For privacy reasons, the event includes the variant and the dinosaur name but not the name of the customer.
 
 ### Setting up A/B Testing
 
@@ -236,12 +236,12 @@ Alright, so now that we have basic page view tracking and an event for orders, h
 
 This is what we would like to do:
 
-1. Randomly select the variants for the link order and form headline
-2. Store this information for the session, so that we only set it up once for the visitor
-3. Send an event to Pirsch, so that we can analyze what was displayed during the session
-4. Always display the same variants during a session
+1. Randomly select the variants for the link order and headline.
+2. Store this information for the session so that we only set it up once for the visitor.
+3. Send an event to Pirsch so that we can analyze what was displayed during the session.
+4. Always display the same variants during a session.
 
-A simple approach to this is to create a cookie with the variants we would like to display. The cookie only needs to stay valid for up to 24 hours (maximum session life time in Pirsch) and we can check on each page view which variants to display. If it does not exist yet, we create a new one.
+A simple approach to this is to create a cookie with the variants we would like to display. The cookie only needs to stay valid for up to 24 hours (the maximum session life time in Pirsch) and we can check on each page view which variants to display. If it does not exist yet, we create it.
 
 We change our middleware to include the setup and cookie extraction.
 
@@ -279,7 +279,7 @@ export async function handler(
 }
 ```
 
-`initABTesting` and `getVariant` are defined in `analytics/ab-testing.ts`. `initABTesting` will check for the cookie and create a new one and send the Pirsch event if required. `getVariant` simply returns the variant for a key from the cookie. They are then made available by setting context variables (`ctx.state.selectionVariant` and `ctx.state.orderVariant`).
+`initABTesting` and `getVariant` are defined in `analytics/ab-testing.ts`. `initABTesting` will check for the cookie, create a new one, and send the Pirsch event if required. `getVariant` simply returns the variant for a key from the cookie. They are then made available by setting context variables (`ctx.state.selectionVariant` and `ctx.state.orderVariant`).
 
 ```ts
 export function initABTesting(
@@ -316,9 +316,9 @@ export function initABTesting(
 }
 ```
 
-You can check your browser to see which variants have been set by the server in the developer console.
+You can check your browser's developer console to see which variants have been set by the server.
 
-Here is an example how you can use the variant from the cookie to display the form headline. The variant is passed down from the page to the `OrderDino` component.
+Here is an example of how you can use the variant from the cookie to display the form headline. The variant is communicated from the page to the 'OrderDino' component.
 
 ```ts
 // routes/dinos/ankylosaurus.tsx
@@ -362,13 +362,11 @@ export function OrderDino(props: OrderDinoProps) {
 
 ## Conclusion
 
-In this article we covered:
+In this article, we covered:
 
-* How you can do A/B testing using custom events
-* Analyze the effectivness of variations on your dashboard
-* Set up tracking from your (Deno) backend
-* Create events from your backend to track conversions or whole sessions
+* How you can do A/B testing using custom events.
+* Analyze the effectiveness of variations on your dashboard.
+* Set up tracking from your (Deno) backend.
+* Create events from your backend to track conversions or whole sessions.
 
-This demo is a bit more complicated than it usually needs to be, but I wanted to showcase a few ideas you might want to adapt for your own project, as there hasn't been a complete server-side demo for Pirsch. For example, you can do all of the things presented here just using our snippets in the browser. You don't really need the global A/B testing event, because tracking the variant driving a conversion is usually good enough.
-
-However, we'll keep improving Pirsch and implement a more sophisticated A/B tracking feature in the future. But for now, this is a simple and flexible method to do A/B testing.
+This demo is a bit more complicated than it usually needs to be, but I wanted to showcase a few ideas you might want to adapt for your own project, as there hasn't been a complete server-side demo for Pirsch. For example, you can do all of the things presented here just by using our snippets in the browser. You don't really need the global A/B testing event because tracking the variant driving a conversion is usually good enough.

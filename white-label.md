@@ -18,7 +18,7 @@ That's why we created Pirsch Analytics—a powerful web analytics platform desig
 
 ## Why Choose Pirsch Analytics?
 
-Before we get started, let's quickly cover why Pirsch is the way to go for your white label analytics needs. Unlike many other platforms, we offer a straightforward dashboard, easy setup, and most importantly, the freedom to make it your own. As a developer-first, white-label web analytics solution, Pirsch is highly customizable and respects user privacy. Consider it your perfect Google Analytics alternative!
+Before we get started, let's quickly cover why Pirsch is the way to go for your white label web analytics needs. Unlike many other platforms, we offer a straightforward dashboard, easy setup, and most importantly, the freedom to make it your own. As a developer-first web analytics solution, Pirsch is highly customizable and respects user privacy. Consider it your perfect Google Analytics alternative!
 
 ![White Label Web Analytics](/blog/static/pirschanalytics2/dashboards.gif)
 

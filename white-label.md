@@ -54,7 +54,7 @@ Ready to see your new theme in action? Simply head over to the Theme tab within 
 
 ![White Label Web Analytics](/blog/static/whitelabel/dashboard.png)
 
-To put the finishing touches on your dashboard, we recommend giving it its own domain. You can use any domain that's under your control. Typically, a subdomain like `dashboard.your-client.com` or `analytics.your-client.com` will do the trick. If you don't have direct access to your client's domain, you can use one of your own, such as `your-client.your-agency.com`. This adds an extra layer of professionalism and keeps everything organized. We will use analytics.emvi.com for now.
+To put the finishing touches on your dashboard, we recommend giving it its own domain. You can use any domain that's under your control. Typically, a subdomain like `dashboard.your-client.com` or `analytics.your-client.com` will do the trick. If you don't have direct access to your client's domain, you can use one of your own, such as `your-client.your-agency.com`. This adds an extra layer of professionalism and keeps everything organized. We will use `analytics.emvi.com` for now.
 
 ![Pirsch Analytics - Custom Domain](/blog/static/whitelabel/customdomain.png)
 

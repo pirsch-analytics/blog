@@ -297,4 +297,4 @@ And that's really all they need to do. The domain is stored in the database and 
 
 I hope this article gives you a nice overview of how the different parts of our service work together, so that you can replicate it for your own product.
 
-If you want to see it in action, you can [sign up for an account](https://pirsch.io/signup). Pirsch Plus is available during the free trial period. In case you have any questions, feel free to reach out to our [support](mailto:support@pirsch.io).
+If you want to see it in action, you can [sign up for an account](https://pirsch.io/signup) or check out this [public dashboard](https://analytics.emvi.com/?domain=emvi.com&interval=7d&scale=day) of our company website. Pirsch Plus is available during the free trial period. In case you have any questions, feel free to reach out to our [support](mailto:support@pirsch.io).

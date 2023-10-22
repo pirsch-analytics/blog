@@ -29,7 +29,7 @@ We used Caddy prior to version 2.0 in combination with Traefik. Traefik is also 
 
 Here is a simple overview of the setup:
 
-![Infrastructure Before](/blog/static/caddy/infrastructure-before.png)
+![Infrastructure Before](/blog/static/caddy/infrastructure-before.jpg)
 
 So Caddy was load balancing incoming requests to the cluster. Which resolved the IP and port through Traefik, which talked to Consul, which talked to Nomad to find a service. I don't want to go into too much detail about each service here and what it is because we already did that in [another article](https://pirsch.io/blog/techstack/), but I think you can see why we wanted to reduce complexity.
 
@@ -47,7 +47,7 @@ This meant we could potentially remove:
 
 Instead, the new configuration would look like this:
 
-![Infrastructure After](/blog/static/caddy/infrastructure-after.png)
+![Infrastructure After](/blog/static/caddy/infrastructure-after.jpg)
 
 Of course, when you make a change like this, you should set up a new cluster and test all the changes. This is what we did and still do today to ensure that infrastructure changes can be safely pushed into production.
 

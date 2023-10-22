@@ -15,7 +15,7 @@ With the launch of version 2.0, we added white labeling to Pirsch and the abilit
 
 The [Caddy documentation](https://caddyserver.com/docs/) is a good starting point if you're trying to do something similar, but I felt like there wasn't a good overview of how to put all the pieces together. This is my attempt to fill that gap.
 
-*I'm assuming in this article that you're running Linux on your server. No sane person uses a Windows server unless they need to run some arbitrary Windows-only service.*
+*I'm assuming in this article that you're running Linux on your server.*
 
 ## What Is Caddy?
 

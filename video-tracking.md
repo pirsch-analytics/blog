@@ -44,7 +44,7 @@ Next, we need to add the YouTube API script. This is used to set up the player a
 <script src="https://www.youtube.com/iframe_api"></script>
 ```
 
-Alright, now that we have these in place, we can start embedding the video into your website. Normally, you would just add an iframe to your site that looks something like this (for YouTube).
+Alright, now that we have these in place, we can start embedding the video into your website. Normally, you would just add an iframe to your site that looks something like this.
 
 ```html
 <iframe width="560"
@@ -145,7 +145,7 @@ Instead of adding the YouTube iframe API script, add the Vimeo script to the `he
 <script src="https://player.vimeo.com/api/player.js"></script>
 ```
 
-It also requires a `div' on the page, which is later replaced by the player.
+It also requires a `div` on the page, which is later replaced by the player.
 
 ```html
 <div id="vimeo"></div>
@@ -210,7 +210,7 @@ To get a better understanding of the progress of the playback, you can create a 
 
 ![Playback Conversion Goal](/blog/static/videotracking/goal.png)
 
-In this case, it's called *Playback Progress* and applies only to the `/video.html` page. The conversion goal will filter for the `YouTube Playback` event and create a graph from the `progress` metadata field, which we interpret as integers.
+In this case, it's called *Playback Progress* and only applies to the `/video.html` page. The conversion goal will filter for the `YouTube Playback` event and create a graph from the `progress` metadata field, which we interpret as integers.
 
 Clicking on the conversion goal in the dashboard will display the following graph.
 

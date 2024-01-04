@@ -51,7 +51,7 @@ For our first article, we talked to Berry about his Pirsch integration into [Mag
 
 > * It works without cookies, a growing concern among more and more customers who are using Google Analytics
 > * It is partially open source, so if we ever want to host it ourselves, it is possible
-> * A tracker where we can send events with our own meta data
+> * A tracker where we can send events with our own metadata
 > * A simple API where everything is calculated in advance with enough room for custom filters
 
 > After creating a simple test, we took the next step.

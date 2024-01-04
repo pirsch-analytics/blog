@@ -190,7 +190,7 @@ Now that we have collected the progress as custom events, we can take a look at 
 
 If you open the details view (top right corner of the panel), you can see the metadata attached to each event.
 
-![Video Playback Meta Data](/blog/static/videotracking/video-progress.png)
+![Video Playback Metadata](/blog/static/videotracking/video-progress.png)
 
 The metadata statistics tell you how many times a video has been watched and for how long. The progress is grouped in one percent increments. If you prefer larger steps, you can change the calculation in the JavaScript snippets.
 

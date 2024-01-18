@@ -24,7 +24,7 @@ These questions can be answered using custom events in Pirsch. Combined with con
 * When a visitor has finished watching a video
 * A graph of the average play time (also in percent)
 
-First, I'll show you how to use the YouTube and Vimeo APIs to query playback time. Then I will show you what the results look like on the dashboard and how to set up conversion goals. The full source code can be found as part of our demo repository on [GitHub](https://github.com/pirsch-analytics/demo/blob/master/web/static/video.html).
+First, I'll show you how to use the YouTube and Vimeo APIs to query playback time. Then I will show you what the results look like on the dashboard and how to set up conversion goals. The full source code can be found as part of our demo repository on [GitHub](https://github.com/pirsch-analytics/demo/blob/master/web/static/video.php).
 
 ## Setting Up Video Tracking for YouTube
 
@@ -220,4 +220,4 @@ In this case, the average progress was 58% for two visitors. You can add additio
 
 ## Conclusion
 
-I hope you enjoyed reading this little tutorial. Again, the full source code for the demo can be found on [GitHub](https://github.com/pirsch-analytics/demo/blob/master/web/static/video.html). Please reach out if you have any questions.
+I hope you enjoyed reading this little tutorial. Again, the full source code for the demo can be found on [GitHub](https://github.com/pirsch-analytics/demo/blob/master/web/static/video.php). Please reach out if you have any questions.

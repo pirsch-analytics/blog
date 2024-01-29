@@ -28,7 +28,7 @@ Before I will go into the implementation details, we have to define when an arti
 Before you can send events, you have to add the following snippet to the head section of your page. In our case, we added the snippet to the Hugo HTML template (Hugo is a static site generator).
 
 ```HTML
-<script type="text/javascript" src="https://api.pirsch.io/pirsch-events.js" 
+<script src="https://api.pirsch.io/pirsch-events.js" 
     id="pirscheventsjs" 
     data-code="{{.Site.Params.pirsch}}"></script>
 ```
@@ -41,7 +41,7 @@ Again, we added a JS script to our page. This time as part of the `single.html` 
 
 ```HTML
 {{- $article := resources.Get "js/article.js" -}}
-<script type="text/javascript" src="{{$article.RelPermalink}}"
+<script src="{{$article.RelPermalink}}"
     id="article"
     data-title="{{.Title}}"
     data-words="{{countwords .Content}}"></script>

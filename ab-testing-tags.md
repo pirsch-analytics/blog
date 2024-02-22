@@ -129,7 +129,9 @@ When the button is clicked, the conversion is tracked by the custom event. You c
 
 ![Pirsch Dashboard Event Filter](/blog/static/abtestingtags/dashboard-tag-event-filter.png)
 
-With more data, you can begin to compare the two and see which headline is more effective.
+With more data, you can begin to compare the two and see which headline is more effective. The new comparison mode (since Pirsch version 2.2) is very useful in this case.
+
+![Pirsch Comparison Mode](/blog/static/abtestingtags/dashboard-comparison.png)
 
 ## Conclusion
 

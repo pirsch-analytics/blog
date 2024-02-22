@@ -1,5 +1,5 @@
 slug = "ab-testing-using-tag-based-segmentation-pirsch-analytics"
-title = "Implement A/B Testing Using Tag-Based Segmentation on Pirsch Analytics"
+title = "Implement A/B Testing Using Tag-based Segmentation on Pirsch Analytics"
 date = 2024-02-22
 summary = "Learn how you can implement A/B testing on Pirsch using tags."
 image = "abtestingtags.png"
@@ -25,7 +25,7 @@ To run an A/B experiment, you must first define a hypothesis. These are usually 
 
 To test this hypothesis, you would then create one or more new variants for the headline and implement and test the results using Pirsch. Of course, testing requires some time and a significant number of visitors, otherwise the results won't be reliable.
 
-## Tag-Based Segmentation
+## Tag-based Segmentation
 
 Using tag-based segmentation, implementing A/B testing with Pirsch takes just minutes. Tags can be used for all sorts of things, including A/B testing, but you can also use them for segmentation or to attach metadata to page views. They are always attached to the page view itself, like the path or the page title. Here is an example of how to define tags using the JavaScript snippet integration. The API also supports tag appending.
 

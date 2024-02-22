@@ -11,7 +11,11 @@ github = "Kugelschieber"
 twitter = "m5blum"
 ---
 
-Before we get started, I'd like to point out that we will implement a more sophisticated A/B testing feature in the future. But you can do proper A/B testing today using events. In this demo, we're doing everything on the server-side, but you could also set it up in the browser using our JavaScript snippets.
+~~Before we get started, I'd like to point out that we will implement a more sophisticated A/B testing feature in the future. But you can do proper A/B testing today using events.~~
+
+**The feature mentioned above is called tag-based segmentation and now available to all Pirsch Plus customers! Check out [this](https://pirsch.io/blog/ab-testing-using-tag-based-segmentation-pirsch-analytics/) post for an updated version.**
+
+In this demo, we're doing everything on the server-side, but you could also set it up in the browser using our JavaScript snippets.
 
 The source code for this demo is available on [GitHub](https://github.com/pirsch-analytics/demo/tree/master/deno).
 

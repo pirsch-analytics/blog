@@ -1,7 +1,7 @@
 slug = "tracking-youtube-vimeo-videos"
-title = "How to Track the Playback Time of YouTube and Vimeo Videos Using Custom Events"
+title = "How to Track the Playback Time of HTML, YouTube, and Vimeo Videos Using Custom Events"
 date = 2023-12-02
-summary = "Learn how you can track the playback time of YouTube and Vimeo videos on your website using custom events."
+summary = "Learn how you can track the playback time of HTML, YouTube, and Vimeo videos on your website using custom events."
 image = "video.png"
 
 [author]
@@ -11,7 +11,9 @@ github = "Kugelschieber"
 twitter = "m5blum"
 ---
 
-We've talked about it and been asked about it many times, but we've never really shown how to track the playback time of a YouTube or Vimeo video using Pirsch and custom events. I'm going to change that in this article.
+**Update: We've added a demo for regular HTML video elements!**
+
+We've talked about it and been asked about it many times, but we've never really shown how to track the playback time of a HTML, YouTube, or Vimeo video using Pirsch and custom events. I'm going to change that in this article.
 
 ## What Will We Track and How Will It Be Useful?
 
@@ -24,21 +26,117 @@ These questions can be answered using custom events in Pirsch. Combined with con
 * When a visitor has finished watching a video
 * A graph of the average play time (also in percent)
 
-First, I'll show you how to use the YouTube and Vimeo APIs to query playback time. Then I will show you what the results look like on the dashboard and how to set up conversion goals. The full source code can be found as part of our demo repository on [GitHub](https://github.com/pirsch-analytics/demo/blob/master/web/static/video.php).
+First, I'll show you how to use the, HTML, YouTube, and Vimeo APIs to query playback time. Then I will show you what the results look like on the dashboard and how to set up conversion goals. The full source code can be found as part of our demo repository on [GitHub](https://github.com/pirsch-analytics/demo/blob/master/web/static/video.php).
 
-## Setting Up Video Tracking for YouTube
+## Setting up Video Tracking for the HTML Video Elements
 
 First, we need some data. To track the playback time of a video, we'll send a custom event with three metrics: the playback time in percent, whether the video has started, and whether it has finished.
 
-For tracking, you should embed the Pirsch extended snippet (or `pirsch.js` + `pirsch-events.js`) in the `head` section of your website. This will automatically track a page view and provide the `pirsch` event function.
+For tracking, you should embed the Pirsch snippet (`pa.js`) in the `head` section of your website. This will automatically track a page view and provide the `pirsch` event function.
 
 ```html
-<script defer src="https://api.pirsch.io/pirsch-extended.js"
-    id="pirschextendedjs"
+<script defer src="https://api.pirsch.io/pa.js"
+    id="pianjs"
     data-code="YOUR_IDENTIFICATION_CODE"></script>
 ```
 
-Next, we need to add the YouTube API script. This is used to set up the player and attach events to it so we can track its progress. Add it to the `head` section of your page.
+Next, we add the video element to the page.
+
+```html
+<video id="video" width="640" height="360" controls>
+    <source src="/video/video.mp4" type="video/mp4" />
+    <source src="/video/video.ogg" type="video/ogg" />
+    Your browser does not support the video tag.
+</video>
+```
+
+This will load the `video.mp4` or `video.ogg`, depending on the visitors browser. Note that we added the `id` attribute, so that we can access the video element from JavaScript.
+
+Let's add the JavaScript skeleton, which we will fill out step by step.
+
+```html
+<script>
+    (function() {
+        document.addEventListener("DOMContentLoaded", () => {
+            const player = document.getElementById("video");
+            let progress = 0;
+            let started = 0;
+            let completed = 0;
+            
+            player.addEventListener("playing", () => {
+                
+            });
+
+            player.addEventListener("pause", () => {
+                
+            });
+
+            player.addEventListener("ended", () => {
+                
+            });
+
+            window.addEventListener("beforeunload", () => {
+                
+            }); 
+        });
+    })();
+</script>
+```
+
+The snippet above will wait for the page to be fully loaded (`document.addEventListener("DOMContentLoaded", () => {`).
+
+We then select the video player on the site using the `id` we set earlier and initialize three variables for the metrics we would like to track. The relative progress (0% to 100%), and if the video has started and completed.
+
+Next, we add three event listeners. Three of them to the player to handle playback events, and one to `window` to send the Pirsch custom event when the page is unloaded (left or closed).
+
+Let's fill out the handlers. `playing` and `ended` are really simple. They will be fired when the video is played and if it has ended (watched fully through). In case it has ended, we can also set the progress to 100%.
+
+```JavaScript
+player.addEventListener("playing", () => {
+    started = 1;
+});
+
+player.addEventListener("ended", () => {
+    progress = 100;
+    completed = 1;
+});
+```
+
+On `pause`, we need to calculate the progress. This will use two fields, the `currentTime` and the `duration`. The `currentTime` field is set to the current playback time, like 3.12 seconds. The `duration` is the total duration of the video, also in seconds.
+
+```JavaScript
+player.addEventListener("pause", () => {
+    const p = Math.round(player.currentTime / player.duration * 100);
+
+    if (p > progress) {
+        progress = p;
+    }
+});
+```
+
+As you can see, multiplying the progress by 100 and rounding the number will give us a nice number between 0 and 100. We only update the progress when it has further progressed than it did before, in case the visitor seeks the video.
+
+The last step is to send the event to Pirsch.
+
+```JavaScript
+window.addEventListener("beforeunload", () => {
+    if (started) {
+        pirsch("Video Playback", {
+            meta: {
+                progress,
+                started,
+                completed
+            }
+        });
+    }
+});
+```
+
+The event is only tracked if the video has been started.
+
+## Setting Up Video Tracking for YouTube
+
+To track YouTube videos, we need to add the YouTube API script. This is used to set up the player and attach events to it so we can track its progress. Add it to the `head` section of your page.
 
 ```html
 <script src="https://www.youtube.com/iframe_api"></script>
@@ -62,22 +160,24 @@ In our case, we need to set it up through JavaScript so that we can attach the n
 <div id="youtube"></div>
 ```
 
-The id can be anything, but you need to set it in the code below. Now add a `<script>` tag right after that. We'll use this to set up the player.
+The `id` can be anything, but you need to set it in the code below. Now add a `<script>` tag right after that. We'll use this to set up the player.
 
 ```html
 <script>
-    let player;
-    let progress = 0;
-    let started = 0;
-    let completed = 0;
+    (function() {
+        let player;
+        let progress = 0;
+        let started = 0;
+        let completed = 0;
 
-    function onYouTubeIframeAPIReady() {
-        // ...
-    }
+        function onYouTubeIframeAPIReady() {
+            // ...
+        }
 
-    window.addEventListener("beforeunload", () => {
-        // ...
-    });
+        window.addEventListener("beforeunload", () => {
+            // ...
+        });
+    }());
 </script>
 ```
 
@@ -113,7 +213,7 @@ player = new YT.Player("youtube", {
 });
 ```
 
-As you can see, the video ID is the same as in the regular iframe (`dQw4w9WgXcQ`). The size can be adjusted as needed. Important for tracking is the `events` section.
+As you can see, the video ID iThe event is only tracked if the video has been started.s the same as in the regular iframe (`dQw4w9WgXcQ`). The size can be adjusted as needed. Important for tracking is the `events` section.
 
 We have added a listener for state changes. In our case we only care about the `PLAYING`, `PAUSED` and `ENDED` events. When the video starts, we set `started` to `1`. When the video is finished, we set the progress to `100` (percent) and `completed` to `1`. They are tracked as `0` and `1` so that we can calculate graphs from them.
 

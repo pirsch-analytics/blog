@@ -62,7 +62,9 @@ The plan for 2026 stays mostly unchanged.
 
 Our focus will be on API version 2.0, which was announced in 2024. This will make it much simpler to work with while increasing its flexibility. A new permission model will be introduced to unify access management, which is currently divided between user accounts, teams and dashboards. Subsequently, we will improve the dashboard by adding Sankey diagrams and cleaning up the settings pages.
 
-## Conclusion
+I also plan to publish more blog posts. As you may have noticed, I have significantly slowed down compared to previous years, for the reasons mentioned above. I hope to write at least one post per month (no AI-slop, of course, but DeepL will remain a trusted friend of mine).
+
+## Wrapping Up
 
 Thank you for reading our recap, and for using Pirsch! We hope you have a great year in 2026!
 

@@ -1,4 +1,4 @@
-slug = "2025-recap"
+slug = "our-recap-of-2025"
 title = "Our Recap of 2025"
 date = 2025-12-30
 summary = "2025 has been a steady year in growth and Pirsch is more stable than ever before."

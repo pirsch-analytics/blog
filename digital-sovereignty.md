@@ -1,6 +1,6 @@
 slug = "digital-sovereignty-in-europe-and-why-the-location-of-your-data-matters"
 title = "Digital Sovereignty in Europe and Why the Location of Your Data Matters"
-date = 2026-03-25
+date = 2026-03-26
 summary = ""
 image = "digitalsovereignty.png"
 

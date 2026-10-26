@@ -50,6 +50,7 @@ Beyond infrastructure, there are also high-quality European alternatives at the 
 - **Email:** Mailbox.org, Proton Mail, Tuta as replacements for Gmail
 - **Office & Collaboration:** Nextcloud, OnlyOffice, Cryptpad, instead of Microsoft 365 / Google Workspace
 - **Video Conferencing:** Jitsi, BigBlueButton, instead of Zoom / Teams
+- **AI Assistants**: Mistral's Le Chat [instead of ChatGPT](https://blog.contentforce.ai/chatgpt-alternative/)
 - **Web Analytics:** Pirsch Analytics instead of Google Analytics (of course)
 
 There are already plenty of success stories that hopefully inspire other users to switch too.

@@ -11,7 +11,7 @@ github = "Kugelschieber"
 twitter = "m5blum"
 ---
 
-Today, we're happy to announce that the next major version of Pirsch, version 3, is new available! 🎉
+Today, we're happy to announce that the next major version of Pirsch, version 3, is now available! 🎉
 
 Our last major update was in 2023. Since then, we have updated Pirsch hundreds of times and made improvements to it over the years. While it has been a fantastic journey and we have grown considerably, there have been limitations. Version 3 is the next stage in its evolution, featuring a complete rewrite of the core responsible for data ingestion and generating statistics.
 

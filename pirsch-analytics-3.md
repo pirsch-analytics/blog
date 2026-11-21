@@ -69,7 +69,7 @@ In a future update, you may even be able to customise the ingestion pipeline so 
 
 Since day one, our API has been one of Pirsch's defining features. We developed Pirsch as an 'analytics platform', enabling you to run it in the background for your own products and clients. This approach has served many of you well, but the statistics side of the API has grown considerably over the years. Therefore, we have decided to develop a new API (/api/v2) to address this issue. Don't worry, though, your existing integrations will continue to work: v1 isn't going anywhere and will remain available indefinitely.
 
-There are specialised API endpoints for each statistic. The new core can generate reports based on dimensions and metrics on the fly, so this is going to change significantly. Here is an example of how you might generate a report in future:
+There are specialised API endpoints for each statistic. The new core can generate reports based on dimensions and metrics on the fly, so this is going to change significantly. Here is an example of how you might generate a report in the future:
 
 ```json
 {

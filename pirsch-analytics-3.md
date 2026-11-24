@@ -21,7 +21,7 @@ You might not notice the changes on the surface, but they are significant, and w
 
 We have been making continuous improvements to v2 since its launch, but we have encountered limitations that cannot be resolved without starting again from scratch. Many of these limitations were reported by you, our customers.
 
-* The API was more complicated and difficult to use then neccessary
+* The API was more complicated and difficult to use than neccessary
 * The permission model needed to be simpler and more granular
 * It wasn't possible to generate specialised reports
 * Data ingestion had room for improvement
